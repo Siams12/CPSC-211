@@ -83,15 +83,18 @@ public class MultiplayerController
 	    		 BoardPosition Player_Position = board.findPosition(Current_Player);
 	    		 BoardPosition P = Movement(Player_Position, User_Direction);
 	    		 
-	    		 if (Control.Direction(User_Direction) == false){
+	    		 while (Control.Direction(User_Direction) == false){
 	    			 
 	    		 System.out.println(Current_Player + " what is your move?");
 	    		 User_Direction = scan.nextLine();
-	    		 }
-	    		 Write(directionFile,User_Direction);
-	    		  P = Movement(Player_Position, User_Direction);
+	    		 }		
+	    		 P = Movement(Player_Position, User_Direction);
 	    		 board.movePlayer(Current_Player, P);
+	    		 if (!Player_Position .equals(board.findPosition(Current_Player))){
+	    		 Write(directionFile,User_Direction);
+	    		 //Had to have the writing after the movement to check for the movement to be correct.
 	    		 view.display();
+	    		
 	    		 if (Current_Player == BoardSpace.Player1) {
 	    			 Current_Player = BoardSpace.Player2;
 	    		 }
@@ -100,15 +103,15 @@ public class MultiplayerController
 	    		 }
 	    		 
 		    	  
-	    	  }
+	    	  
 	    	  if (board.checkWinner() == BoardSpace.Player1) {
 		    	  System.out.println("Player 1 wins!");
 		      }
 		      if (board.checkWinner() == BoardSpace.Player2) {
-		    	  System.out.println("Player 2 wins");
-		      }
+		    	  System.out.println("Player 2 wins!");
+		      }}}
 		      Close(directionFile);
-		     
+	    	  }
 	    	  //create board
 	    	  //create a view attached to that board
 	    	  //create output.dat
@@ -126,7 +129,7 @@ public class MultiplayerController
 	      
 	      
 	      
-}
+
 	      public void Close(PrintWriter directionFile) {
 	    	  
 	    	  directionFile.close();
