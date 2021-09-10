@@ -8,7 +8,7 @@ public class BoardView {
 
 	public void display() {
 		for (int i = 0; i < 7; i++) {
-			for (int j = 0; j < 6; j++) {
+			for (int j = 0; j < 7; j++) {
 				if (board.get(i, j) == BoardSpace.Available) {
 					System.out.print("-");
 				}
@@ -23,7 +23,7 @@ public class BoardView {
 					
 				}
 			}
-			System.out.println("-");
+			System.out.println("");
 
 		}
 

@@ -69,9 +69,7 @@ public class MultiplayerController
 	
 	public void Write(PrintWriter directionFile, String User_Direction) {
 	 directionFile.println(User_Direction);
-		
 	}
-	
 	      public void go ()
 	      {   PrintWriter directionFile = File();
 	    	  IsolaBoard board = new IsolaBoard();
@@ -83,13 +81,15 @@ public class MultiplayerController
 	    		 view.display();
 	    		 String User_Direction = " ";
 	    		 BoardPosition Player_Position = board.findPosition(Current_Player);
-	    		 while (Control.Direction(User_Direction) == false){
+	    		 BoardPosition P = Movement(Player_Position, User_Direction);
+	    		 
+	    		 if (Control.Direction(User_Direction) == false){
 	    			 
 	    		 System.out.println(Current_Player + " what is your move?");
 	    		 User_Direction = scan.nextLine();
 	    		 }
 	    		 Write(directionFile,User_Direction);
-	    		 BoardPosition P = Movement(Player_Position, User_Direction);
+	    		  P = Movement(Player_Position, User_Direction);
 	    		 board.movePlayer(Current_Player, P);
 	    		 view.display();
 	    		 if (Current_Player == BoardSpace.Player1) {
@@ -107,7 +107,7 @@ public class MultiplayerController
 		      if (board.checkWinner() == BoardSpace.Player2) {
 		    	  System.out.println("Player 2 wins");
 		      }
-		      
+		      Close(directionFile);
 		     
 	    	  //create board
 	    	  //create a view attached to that board

@@ -42,7 +42,7 @@ public class ReplayController {
 			 case("SW"):
 				return new BoardPosition(Position.getRow()+1, Position.getColumn()-1);
 			 case("NE"):
-				 return  new BoardPosition(Position.getRow()-1, Position.getColumn()+1);
+				 return new BoardPosition(Position.getRow()-1, Position.getColumn()+1);
 			 case("NW"):
 				return new BoardPosition(Position.getRow()-1, Position.getColumn()-1);
 			 }
@@ -74,7 +74,6 @@ public class ReplayController {
 			    		 else {
 			    			 Current_Player = BoardSpace.Player1;
 			    		 }
-			    		 
 				    	  
 			    	  }
 			    	  if (board.checkWinner() == BoardSpace.Player1) {
@@ -84,7 +83,7 @@ public class ReplayController {
 				    	  System.out.println("Player 2 wins");
 				      }
 				      
-				     
+				     close(scanFile);
 		//Open output.dat
 		//Create board
 		//Create text view

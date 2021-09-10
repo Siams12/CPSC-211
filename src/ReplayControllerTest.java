@@ -2,39 +2,8 @@ import static org.junit.Assert.*;
 
 import org.junit.Test;
 
-public class MultiplayerControllerTest {
+public class ReplayControllerTest {
 
-	@Test
-	public void testDirection() {
-		MultiplayerController Direction = new MultiplayerController();
-		if (Direction.Direction("NW") == false) {
-		fail("Expected to return true got" + (Direction.Direction("NW"))  );
-		}
-		if (Direction.Direction("N") == false) {
-			fail("Expected to return true got" + (Direction.Direction("N"))  );
-			}
-		if (Direction.Direction("NE") == false) {
-			fail("Expected to return true got" + (Direction.Direction("NE"))  );
-			}
-		if (Direction.Direction("E") == false) {
-			fail("Expected to return true got" + (Direction.Direction("E"))  );
-			}
-		if (Direction.Direction("W") == false) {
-			fail("Expected to return true got" + (Direction.Direction("W"))  );
-			}
-		if (Direction.Direction("S") == false) {
-			fail("Expected to return true got" + (Direction.Direction("S"))  );
-			}
-		if (Direction.Direction("SW") == false) {
-			fail("Expected to return true got" + (Direction.Direction("SW"))  );
-			}
-		if (Direction.Direction("SE") == false) {
-			fail("Expected to return true got" + (Direction.Direction("SE"))  );
-			}
-		if (Direction.Direction("NorthWest") == true) {
-			fail("Expected to return false got" + (Direction.Direction("NorthWest")));
-		}
-	}
 	@Test
 	public void testMovement() {
 		MultiplayerController Movement = new MultiplayerController();
@@ -72,4 +41,5 @@ public class MultiplayerControllerTest {
 		}
 	}
 
-}
+	}
+
